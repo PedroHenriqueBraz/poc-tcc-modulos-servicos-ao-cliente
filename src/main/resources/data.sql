@@ -22,3 +22,17 @@ insert into etapa(etapa_id, finalizada_em, fluxo_entrega_fluxo_id, iniciada_em, 
 insert into fluxo_entrega(fluxo_id, cliente_id, mercadoria_id, valor_frete) values (2, 1, 3, 1000)
 insert into etapa(etapa_id, finalizada_em, fluxo_entrega_fluxo_id, iniciada_em, status_etapa_id, tipo_etapa_id)values (default, '2022-03-07T18:07:19.2727633', 2, '2022-03-05T15:07:19.2727633', 3, 1)
 insert into etapa(etapa_id, finalizada_em, fluxo_entrega_fluxo_id, iniciada_em, status_etapa_id, tipo_etapa_id)values (default, '2022-03-08T18:07:19.2727633', 2, '2022-03-07T18:07:19.2727633', 1, 2)
+
+--
+insert into fluxo_entrega(fluxo_id, cliente_id, mercadoria_id, valor_frete) values (5, 2, 4, 500)
+insert into etapa(etapa_id, finalizada_em, fluxo_entrega_fluxo_id, iniciada_em, status_etapa_id, tipo_etapa_id)values (default, '2022-03-15T18:07:19.2727633', 2, '2022-03-14T15:07:19.2727633', 3, 1)
+insert into etapa(etapa_id, finalizada_em, fluxo_entrega_fluxo_id, iniciada_em, status_etapa_id, tipo_etapa_id)values (default, '2022-03-18T18:07:19.2727633', 2, '2022-03-15T18:07:19.2727633', 1, 2)
+
+--cancelada
+insert into fluxo_entrega(fluxo_id, cliente_id, mercadoria_id, valor_frete) values (3, 2, 2, 2500)
+insert into etapa(etapa_id, finalizada_em, fluxo_entrega_fluxo_id, iniciada_em, status_etapa_id, tipo_etapa_id)values (default, '2022-03-07T18:07:19.2727633', 3, '2022-03-05T15:07:19.2727633', 3, 1)
+insert into etapa(etapa_id, finalizada_em, fluxo_entrega_fluxo_id, iniciada_em, status_etapa_id, tipo_etapa_id)values (default, '2022-03-08T18:07:19.2727633', 3, '2022-03-07T18:07:19.2727633', 4, 2)
+
+--cancelada
+insert into fluxo_entrega(fluxo_id, cliente_id, mercadoria_id, valor_frete) values (4, 2, 2, 2500)
+insert into etapa(etapa_id, finalizada_em, fluxo_entrega_fluxo_id, iniciada_em, status_etapa_id, tipo_etapa_id)values (default, '2022-03-07T18:07:19.2727633', 4, '2022-03-05T15:07:19.2727633', 4, 1)
