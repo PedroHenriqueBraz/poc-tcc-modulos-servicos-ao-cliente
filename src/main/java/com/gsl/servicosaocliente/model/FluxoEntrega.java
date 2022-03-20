@@ -2,6 +2,7 @@ package com.gsl.servicosaocliente.model;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +23,28 @@ public class FluxoEntrega {
 
     @Column(name = "valor_frete")
     private BigDecimal valorFrete;
+
+    @Column(name="previsao_entrega")
+    private LocalDate dataPrevisao;
+
+    public LocalDate getDataPrevisao() {
+        return dataPrevisao;
+    }
+
+    public void setDataPrevisao(LocalDate dataPrevisao) {
+        this.dataPrevisao = dataPrevisao;
+    }
+
+    public LocalDate getDataEntrega() {
+        return dataEntrega;
+    }
+
+    public void setDataEntrega(LocalDate dataEntrega) {
+        this.dataEntrega = dataEntrega;
+    }
+
+    @Column(name="data_entrega")
+    private LocalDate dataEntrega;
 
     @OneToMany(mappedBy = "fluxoEntrega", cascade = CascadeType.ALL)
     private List<Etapa> etapas = new ArrayList<>();
