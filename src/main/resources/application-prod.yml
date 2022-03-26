@@ -1,0 +1,6 @@
+server:
+  port: 8080
+
+servicos:
+  mic:
+    url: poc-tcc-load-balancer-1045851266.us-east-1.elb.amazonaws.com
