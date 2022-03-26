@@ -2,9 +2,7 @@ package com.gsl.servicosaocliente.service;
 
 import com.gsl.servicosaocliente.model.Etapa;
 import com.gsl.servicosaocliente.model.FluxoEntrega;
-import com.gsl.servicosaocliente.model.TipoEtapa;
 import com.gsl.servicosaocliente.model.dto.EmAndamentoDTO;
-import com.gsl.servicosaocliente.model.dto.FluxoEntregaDTO;
 import com.gsl.servicosaocliente.model.dto.NovaEntregaDTO;
 import com.gsl.servicosaocliente.model.dto.SeguirEtapaDTO;
 import com.gsl.servicosaocliente.repository.FluxoEntregaRepository;
@@ -13,7 +11,7 @@ import com.gsl.servicosaocliente.repository.TipoEtapaRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -45,8 +43,7 @@ public class FluxoEntregaServiceImpl implements FluxoEntregaService{
         etapa.setStatusEtapa(statusEtapaRepository.findById(novaEntregaDTO.getStatusId()).get());
 
         fluxo.addEtapa(etapa);
-
-        return fluxoEntregaRepository.saveAndFlush(fluxo);
+       return fluxoEntregaRepository.saveAndFlush(fluxo);
     }
 
     @Override
@@ -62,11 +59,8 @@ public class FluxoEntregaServiceImpl implements FluxoEntregaService{
             etapaAtual.setStatusEtapa(statusEtapaRepository.findById(4).get());
             return  fluxoEntregaRepository.saveAndFlush(fluxo);
         }
-
         fluxo.addEtapa(definirProximaEtapa(etapaAtual));
-
         return  fluxoEntregaRepository.saveAndFlush(fluxo);
-
     }
 
     @Override
@@ -99,9 +93,6 @@ public class FluxoEntregaServiceImpl implements FluxoEntregaService{
     private Etapa obterEtapaAtual(List<Etapa> etapaList){
         var lastPosition = etapaList.size() -1;
 
-       return etapaList.stream().sorted((e1,e2) -> e1.getId().compareTo(e2.getId())).toList().get(lastPosition);
-
+       return etapaList.stream().sorted(Comparator.comparing(Etapa::getId)).toList().get(lastPosition);
     }
-
-
 }
