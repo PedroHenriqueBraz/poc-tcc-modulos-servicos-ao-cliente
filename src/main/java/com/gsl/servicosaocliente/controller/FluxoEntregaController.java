@@ -18,9 +18,6 @@ public class FluxoEntregaController {
 
     private final FluxoEntregaService fluxoEntregaService;
 
-    @Autowired
-    private Environment env;
-
     public FluxoEntregaController(FluxoEntregaService fluxoEntregaService) {
         this.fluxoEntregaService = fluxoEntregaService;
     }
