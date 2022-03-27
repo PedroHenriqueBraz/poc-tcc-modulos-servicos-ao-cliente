@@ -3,4 +3,4 @@ server:
 
 servicos:
   mic:
-    url: http://poc-tcc-load-balancer-1045851266.us-east-1.elb.amazonaws.com
+    url: https://informacoes-cadastrais.herokuapp.com
