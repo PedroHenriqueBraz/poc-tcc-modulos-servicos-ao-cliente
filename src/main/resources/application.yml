@@ -22,3 +22,9 @@ spring:
 servicos:
   mic:
     url: http://localhost:8092
+
+# Show details of health endpoint
+management:
+  endpoint:
+    health:
+      show-details: always
