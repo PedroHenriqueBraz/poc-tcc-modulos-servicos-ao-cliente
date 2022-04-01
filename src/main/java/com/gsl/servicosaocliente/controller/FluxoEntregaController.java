@@ -27,6 +27,11 @@ public class FluxoEntregaController {
         return ResponseEntity.ok(fluxoEntregaService.obterFluxoEntrega(id));
     }
 
+    @GetMapping("/cliente/{id}")
+    public ResponseEntity<List<FluxoEntrega>>obterFluxoPorCliente(@PathVariable("id") int id) throws Exception {
+        return ResponseEntity.ok(fluxoEntregaService.obterFluxoEntregaPorCliente(id));
+    }
+
     @GetMapping
     public ResponseEntity<List<FluxoEntrega>> obterEntregas() throws Exception {
         return ResponseEntity.ok(fluxoEntregaService.obterEntregasMensal());

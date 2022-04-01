@@ -32,6 +32,11 @@ public class FluxoEntregaServiceImpl implements FluxoEntregaService{
     }
 
     @Override
+    public List<FluxoEntrega> obterFluxoEntregaPorCliente(int id) {
+        return fluxoEntregaRepository.getFluxoEntregaByClienteId(id).get();
+    }
+
+    @Override
     public FluxoEntrega criarNovaEntrega(NovaEntregaDTO novaEntregaDTO) {
         var fluxo = new FluxoEntrega();
         fluxo.setClienteId(novaEntregaDTO.getClienteId());

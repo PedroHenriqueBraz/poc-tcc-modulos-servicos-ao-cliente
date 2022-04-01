@@ -10,6 +10,7 @@ import java.util.List;
 
 public interface FluxoEntregaService {
     FluxoEntrega obterFluxoEntrega(int id);
+    List<FluxoEntrega> obterFluxoEntregaPorCliente(int id);
     FluxoEntrega criarNovaEntrega(NovaEntregaDTO novaEntregaDTO);
     FluxoEntrega seguirEtapa(SeguirEtapaDTO seguirEtapa);
     FluxoEntrega colocarEmAndamento(EmAndamentoDTO emAndamentoDTO);
