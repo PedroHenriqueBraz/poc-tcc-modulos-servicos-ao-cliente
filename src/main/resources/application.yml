@@ -20,8 +20,8 @@ spring:
       enabled: true
       path: /h2-console
 servicos:
-  mic:
-    url: http://localhost:8092
+  mge:
+    url: https://gestao-estrategia.herokuapp.com
 
 # Show details of health endpoint
 management:

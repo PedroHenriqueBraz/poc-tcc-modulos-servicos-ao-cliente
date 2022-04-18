@@ -2,5 +2,5 @@ server:
   port: 8080
 
 servicos:
-  mic:
-    url: https://informacoes-cadastrais.herokuapp.com
+  mge:
+    url: https://gestao-estrategia.herokuapp.com
